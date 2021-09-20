@@ -1,0 +1,29 @@
+.error {
+  display: block;
+  color: yellow;
+}
+
+.form-row {
+  padding: 20px;
+}
+
+.field-name {
+  margin-inline-end: 10px;
+}
+
+.controls button {
+  margin-inline-end: 15px;
+  padding: 10px 15px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.controls button:last-of-type {
+  margin-inline-end: 0;
+}
+
+.controls button:disabled {
+  background-color: #ccc;
+  color: #000;
+}

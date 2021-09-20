@@ -10,12 +10,16 @@ import {
 
 import { ToastProvider } from "react-toast-notifications";
 import { CarsProvider } from "./contexts/CarsContext";
+import { DriversProvider } from "./contexts/DriversContext";
 
 import Home from "./pages/Home/Home";
-import Spectators from "./pages/Spectators/Spectators";
+import Drivers from "./pages/Drivers/Drivers";
+import AddDriver from "./pages/AddDriver/AddDriver";
+import UpdateDriver from "./pages/UpdateDriver/UpdateDriver";
 import AddCar from "./pages/AddCar/AddCar";
 import UpdateCar from "./pages/UpdateCar/UpdateCar";
 import NotFound from "./pages/NotFound/NotFound";
+import Spectators from "./pages/Spectators/Spectators";
 
 function App() {
   return (
@@ -28,8 +32,15 @@ function App() {
             <Route path={`/cars/update/:id`} component={UpdateCar} />
             <Route path="/spectators" component={Spectators} />
             <Route path="*" component={NotFound} />
-          </Switch>
+            </Switch>
         </CarsProvider>
+        <DriversProvider>
+          <Switch>
+            <Route exact path={`/drivers`} component={Drivers} />
+            <Route path={`/drivers/add`} component={AddDriver} />
+            <Route path={`/drivers/update/:id`} component={UpdateDriver}/>
+            </Switch>
+        </DriversProvider>
       </ToastProvider>
     </Router>
   );
